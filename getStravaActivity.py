@@ -18,7 +18,7 @@ load_dotenv()
 response = strava_oauth2()
 client = StravaIO(response['access_token'])
 
-list_activities = client.get_logged_in_athlete_activities(after='last month')
+list_activities = client.get_logged_in_athlete_activities(after='last year')
 activity_shortlist = []
 for a in list_activities:
     if a.type == 'Ride' and a.distance > 40000:
